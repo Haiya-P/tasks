@@ -47,7 +47,13 @@ export const removeDollars = (amounts: string[]): number[] => {
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    return [];
+    let quiet = messages.filter((message: string) =>
+        message.endsWith("?") ? "" : message,
+    );
+    let shouting = quiet.map((message: string) =>
+        message.endsWith("!") ? message.toUpperCase() : message,
+    );
+    return shouting;
 };
 
 /**
@@ -66,7 +72,10 @@ export function countShortWords(words: string[]): number {
  * then return true.
  */
 export function allRGB(colors: string[]): boolean {
-    return false;
+    return colors.every(
+        (rgb: string): boolean =>
+            rgb == "red" || rgb == "green" || rgb == "blue",
+    );
 }
 
 /**
@@ -77,9 +86,16 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
-    return "";
+    let sum =
+        addends.length == 0 ? "0=0"
+        : addends.length == 1 ? addends[0] + "=" + addends[0]
+        : addends.length > 1 ?
+            addends.reduce((add, total) => add + total) +
+            "=" +
+            addends.join("+")
+        :   "";
+    return sum;
 }
-
 /**
  * Consumes an array of numbers and produces a new array of the same numbers,
  * with one difference. After the FIRST negative number, insert the sum of all
@@ -90,5 +106,17 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    let negative = values.findIndex((value: number) => value < 0);
+    let getpositive =
+        negative !== -1 ?
+            values.slice(0, negative).reduce((total, num) => total + num, 0)
+        :   values.reduce((current, num) => current + num, 0);
+
+    return negative !== -1 ?
+            [
+                ...values.slice(0, negative + 1),
+                getpositive,
+                ...values.slice(negative + 1),
+            ]
+        :   [...values, getpositive];
 }
