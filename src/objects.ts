@@ -42,7 +42,11 @@ export function isCorrect(question: Question, answer: string): boolean {
  * be exactly one of the options.
  */
 export function isValid(question: Question, answer: string): boolean {
-    return false;
+    let correct =
+        question.type === "short_answer_question" ?
+            true
+        :   question.options.includes(answer);
+    return correct;
 }
 
 /**
@@ -75,7 +79,15 @@ export function toShortForm(question: Question): string {
  * Check the unit tests for more examples of what this looks like!
  */
 export function toMarkdown(question: Question): string {
-    return "";
+    let name_ = question.name;
+    let body_ = question.body;
+    let name_body = `# ${name_}\n${body_}`;
+    let options_ =
+        question.type === "multiple_choice_question" ?
+            "\n" + question.options.map((option) => `- ${option}`).join("\n")
+        :   "";
+    name_body += options_;
+    return name_body;
 }
 
 /**
@@ -83,7 +95,7 @@ export function toMarkdown(question: Question): string {
  * `newName`.
  */
 export function renameQuestion(question: Question, newName: string): Question {
-    return question;
+    return { ...question, name: newName };
 }
 
 /**
@@ -92,7 +104,8 @@ export function renameQuestion(question: Question, newName: string): Question {
  * published; if it was published, now it should be not published.
  */
 export function publishQuestion(question: Question): Question {
-    return question;
+    let published = !question.published;
+    return { ...question, published };
 }
 
 /**
