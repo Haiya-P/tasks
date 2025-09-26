@@ -9,14 +9,6 @@ const emojis: Record<string, string> = {
     thanksgiving: "🦃",
 };
 
-const nextalphabet: Record<string, string> = {
-    christmas: "diwali",
-    diwali: "easter",
-    easter: "halloween",
-    halloween: "thanksgiving",
-    thanksgiving: "christmas",
-};
-
 const nextinyear: Record<string, string> = {
     diwali: "easter",
     easter: "halloween",
