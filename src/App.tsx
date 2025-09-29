@@ -5,14 +5,10 @@ import { StartAttempt } from "./components/StartAttempt";
 import { TwoDice } from "./components/TwoDice";
 import { CycleHoliday } from "./components/CycleHoliday";
 import { Counter } from "./components/Counter";
-<<<<<<< HEAD
-import { ChangeType } from "./components/ChangeType";
-=======
 import { DoubleHalf } from "./bad-components/DoubleHalf";
 import { ColoredBox } from "./bad-components/ColoredBox";
 import { ShoveBox } from "./bad-components/ShoveBox";
 import { ChooseTeam } from "./bad-components/ChooseTeam";
->>>>>>> upstream/task-components
 
 function App(): React.JSX.Element {
     return (
@@ -21,7 +17,7 @@ function App(): React.JSX.Element {
                 UD CISC275 with React Hooks and TypeScript
             </header>
             <hr></hr>
-            {/* <DoubleHalf></DoubleHalf> */}
+            {<DoubleHalf></DoubleHalf>}
             <hr></hr>
             <ChooseTeam></ChooseTeam>
             <hr></hr>
@@ -37,7 +33,6 @@ function App(): React.JSX.Element {
             <hr />
             <TwoDice></TwoDice>
             <hr />
-            <ChangeType></ChangeType>
             <hr />
             <CycleHoliday></CycleHoliday>
         </div>
