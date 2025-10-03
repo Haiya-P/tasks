@@ -9,8 +9,11 @@ import { DoubleHalf } from "./bad-components/DoubleHalf";
 import { ColoredBox } from "./bad-components/ColoredBox";
 import { ShoveBox } from "./bad-components/ShoveBox";
 import { ChooseTeam } from "./bad-components/ChooseTeam";
-import { Button } from "react-bootstrap";
-import IMG_2775 from "./Assets/IMG_2775.jpg";
+import { CheckAnswer } from "./form-components/CheckAnswer";
+import { GiveAttempts } from "./form-components/GiveAttempts";
+import { EditMode } from "./form-components/EditMode";
+import { MultipleChoiceQuestion } from "./form-components/MultipleChoiceQuestion";
+import { ChangeColor } from "./form-components/ChangeColor";
 
 function App(): React.JSX.Element {
     return (
@@ -38,6 +41,20 @@ function App(): React.JSX.Element {
             <hr />
             <hr />
             <CycleHoliday></CycleHoliday>
+            <hr />
+            <CheckAnswer expectedAnswer="111"></CheckAnswer>
+            <hr />
+            <GiveAttempts></GiveAttempts>
+            <hr />
+            <EditMode></EditMode>
+            <hr />
+            <MultipleChoiceQuestion
+                options={["Dover", "Wilmington", "Newark", "Baltimore"]}
+                expectedAnswer="Dover"
+            ></MultipleChoiceQuestion>
+            <hr />
+            <ChangeColor></ChangeColor>
+            <hr />
             <h1> This is a header</h1>
             <img src={IMG_2775} alt="My ugly bird :>" />
             <p>Hello World! Haiya Patel</p>
