@@ -40,7 +40,7 @@ export function EditMode(): React.JSX.Element {
                     />
                 </div>
             :   <div>
-                    {name} {student ? "(Student)" : "(Not a student)"}
+                    {name} is {student ? "a student" : "not a student"}
                 </div>
             }
         </div>
