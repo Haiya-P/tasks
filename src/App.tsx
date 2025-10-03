@@ -22,24 +22,7 @@ function App(): React.JSX.Element {
                 UD CISC275 with React Hooks and TypeScript
             </header>
             <hr></hr>
-<<<<<<< HEAD
             {<DoubleHalf></DoubleHalf>}
-=======
-            <CheckAnswer expectedAnswer="42"></CheckAnswer>
-            <hr></hr>
-            <GiveAttempts></GiveAttempts>
-            <hr></hr>
-            <EditMode></EditMode>
-            <hr></hr>
-            <ChangeColor></ChangeColor>
-            <hr></hr>
-            <MultipleChoiceQuestion
-                options={["a", "b", "c"]}
-                expectedAnswer="b"
-            ></MultipleChoiceQuestion>
-            <hr></hr>
-            {/* <DoubleHalf></DoubleHalf> */}
->>>>>>> upstream/task-forms
             <hr></hr>
             <ChooseTeam></ChooseTeam>
             <hr></hr>
@@ -57,6 +40,20 @@ function App(): React.JSX.Element {
             <hr />
             <hr />
             <CycleHoliday></CycleHoliday>
+            <hr />
+            <CheckAnswer expectedAnswer="111"></CheckAnswer>
+            <hr />
+            <GiveAttempts></GiveAttempts>
+            <hr />
+            <EditMode></EditMode>
+            <hr />
+            <MultipleChoiceQuestion
+                options={["Dover", "Wilmington", "Newark", "Baltimore"]}
+                expectedAnswer="Dover"
+            ></MultipleChoiceQuestion>
+            <hr />
+            <ChangeColor></ChangeColor>
+            <hr />
         </div>
     );
 }
